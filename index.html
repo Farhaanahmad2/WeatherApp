@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .bigcont{
+            height: 100vh;
+            width: 100vw;
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            /* background-color: black ; */
+            background-image: url('j.webp');
+            background-position: center center; 
+            background-size: cover; 
+              /* Adjust this as needed */
+            background-repeat: no-repeat;
+            
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            /* background-color: white; */
+            background-color: rgb(255, 255, 255, 0.6);
+            height: 75vh;
+            width: 50vw;
+            position: relative;
+            border-radius: 15px;
+            /* border: 2px solid red; */
+        }
+       
+        
+        .search_header{
+        position: relative;
+        background-color: black;
+        top: 1vh;
+        height: 4vh;
+        padding: 5px;
+        border-radius: 8px;
+       }
+
+       .fa-solid{
+        color: aliceblue;
+       }
+
+       .city_name{
+        background-color: black;
+        border: black;
+        color: white;
+        padding: 5px;
+        font-size: medium;
+        outline: none; 
+        border: none; 
+
+       }
+
+       input::placeholder{
+        color: white;
+       
+       }
+       
+     
+
+
+
+
+        .bottom
+        {
+            /* border: 2px solid red; */
+            /* background-color: yellow; */
+            position: absolute;
+            margin: 2px;
+            bottom: 2px;
+            width: 100%;
+            height: 38%;
+        }
+        
+        .first{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 50%;
+        }
+        .second{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 50%;
+        }
+        .temp{
+            /* border: 1px solid orange; */
+            width: 45%;
+            height: 90%;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .humidity{
+            /* border: 1px solid orange; */
+            position: relative;
+            width: 45%;
+            height: 90%;
+            border-radius: 5px;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .wind{
+            /* border: 1px solid orange; */
+            width: 45%;
+            height: 90%;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .pressure{
+            /* border: 1px solid orange; */
+            width: 45%;
+            height: 90%;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .temp .fa-solid{
+            color: black;
+            font-size: larger;
+            position: absolute;
+            top: 45%;
+            left: 20px;
+        }
+
+        .temp_card{
+            position: absolute;
+            left: 45px;
+            top: 10px;
+        }
+
+        .humidity .fa-solid{
+            color: black;
+            font-size: larger;
+            position: absolute;
+            top: 45%;
+            left: 20px;
+        }
+
+        .humidity_card{
+            position: absolute;
+            left: 45px;
+            top: 10px;
+        }
+
+        .wind .fa-solid{
+            color: black;
+            font-size: larger;
+            position: absolute;
+            top: 45%;
+            left: 20px;
+        }
+
+        .pressure_card{
+            position: absolute;
+            left: 45px;
+            top: 10px;
+        }
+
+        .pressure .fa-solid{
+            color: black;
+            font-size: larger;
+            position: absolute;
+            top: 45%;
+            left: 20px;
+        }
+
+        .wind_card{
+            position: absolute;
+            left: 45px;
+            top: 10px;
+        }
+
+
+        .weth_res{
+            /* border: 2px solid red; */
+            height: 50%;
+            width: 60%;
+            position: absolute;
+            top: 9%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .city_contry_name{
+            margin: 0px;
+        }
+
+        .date_time_day{
+            margin: 0px;
+        } 
+
+         .weth_forcast{
+            margin: 0;
+            background-color: black;
+            color: white;
+            padding: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 15px;
+            font-size: 20px;
+         }
+        .weth_icon{
+            margin: 0;
+            padding: 0;
+            background-image: url();
+            /* box-shadow: 1px 1px 20px grey; */
+           
+        }
+          
+        .weth_temp{
+            font-size: 42px;
+            margin: 0;
+        }
+
+        .weather_minmax{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+            width: 60%;
+            /* border: 2px solid black; */
+        }
+
+        .weth_min{
+             font-size: 14px;
+            /* border: 2px solid pink; */
+        }
+         
+        .weth_max{
+            font-size: 14px;
+            /* border: 2px solid pink; */
+        }
+
+        @media (max-width: 650px) {
+           .cont{
+            height: 85vh;
+            width: 70vw;
+           }
+          
+        }
+        
+    </style>
+</head>
+<body>
+<div class="bigcont">
+    <div class="cont">
+
+        <div class="search_header">
+            <form action="" class="frm">
+            <i class="fa-solid fa-magnifying-glass" ></i>
+            <input type="text" class="city_name" placeholder="Search your city...">
+            </form>
+        </div>
+
+
+
+
+        <div class="weth_res">
+            <h1 class="city_contry_name">
+                 City,country
+            </h1>
+
+            <p class="date_time_day">
+                 Day,Month,Time
+            </p>
+             
+            <p class="weth_forcast">Froecast</p>
+            <div class="weth_icon">Icon</div>
+            <h1 class="weth_temp">Temp</h1>
+
+           
+                   <div class="weather_minmax">
+                    <div class="weth_min">min</div>
+                    <div class="weth_max">max</div>
+                   </div>
+
+        </div> 
+        
+         
+
+
+    <div class="bottom">
+
+        <div class="first">
+            <div class="temp">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+                <div class="temp_card">
+                    <p>Feels like</p>
+                    <p class="feels_like">15&#176</p>
+                </div>
+            </div>
+
+            <div class="humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="humidity_card">
+                    <p>Humidity</p>
+                    <p class="humidity_like">70%</p>
+                </div>
+            </div>
+        </div>
+         
+        <div class="second">
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="wind_card">
+                    <p>Wind</p>
+                    <p class="wind_like">57 m/s</p>
+                </div>
+            </div>
+
+            <div class="pressure">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div class="pressure_card">
+                    <p>Pressure</p>
+                    <p class="pressure_like">98.5 kPa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+<script>
+           
+         document.querySelector(".cont").style.transition='height 0.4s ,width 0.4s';
+         document.querySelector(".cont").addEventListener('mouseover',()=>{
+          
+          if(window.matchMedia("(min-width: 650px)").matches)
+          { console.log("inside")
+           document.querySelector(".cont").style.height="85vh";
+           document.querySelector(".cont").style.width="60vw";
+          }
+          else{
+            document.querySelector(".cont").style.height="93vh";
+            document.querySelector(".cont").style.width="80vw";
+          }
+       }) 
+         
+
+           document.querySelector(".cont").addEventListener("mouseleave",()=>{
+            if(window.matchMedia("(min-width: 650px)").matches)
+            {
+           document.querySelector(".cont").style.height="75vh";
+           document.querySelector(".cont").style.width="50vw";
+        }
+          else{
+            document.querySelector(".cont").style.height="85vh";
+            document.querySelector(".cont").style.width="70vw";
+          }
+       })
+    
+    
+
+        document.querySelector(".temp").style.transition = 'padding 0.4s'
+        document.querySelector(".temp").addEventListener("mouseover",()=>{
+            document.querySelector(".temp").style.padding="8px"
+        })
+        document.querySelector(".temp").addEventListener("mouseleave",()=>{
+            document.querySelector(".temp").style.padding="0px"
+        })
+
+        document.querySelector(".humidity").style.transition = 'padding 0.4s'
+        document.querySelector(".humidity").addEventListener("mouseover",()=>{
+            document.querySelector(".humidity").style.padding="8px"
+        })
+        document.querySelector(".humidity").addEventListener("mouseleave",()=>{
+            document.querySelector(".humidity").style.padding="0px"
+        })
+
+        document.querySelector(".wind").style.transition = 'padding 0.4s'
+        document.querySelector(".wind").addEventListener("mouseover",()=>{
+            document.querySelector(".wind").style.padding="8px"
+        })
+        document.querySelector(".wind").addEventListener("mouseleave",()=>{
+            document.querySelector(".wind").style.padding="0px"
+        })
+
+        document.querySelector(".pressure").style.transition = 'padding 0.4s'
+        document.querySelector(".pressure").addEventListener("mouseover",()=>{
+            document.querySelector(".pressure").style.padding="8px"
+        })
+        document.querySelector(".pressure").addEventListener("mouseleave",()=>{
+            document.querySelector(".pressure").style.padding="0px"
+        })
+        
+        document.querySelector(".search_header").style.transition = 'padding 0.3s'
+        document.querySelector(".search_header").addEventListener("mouseover",()=>{
+            document.querySelector(".search_header").style.padding="10px"
+        })
+        document.querySelector(".search_header").addEventListener("mouseleave",()=>{
+            document.querySelector(".search_header").style.padding="5px"
+        })
+
+        let cityName=document.querySelector(".city_contry_name");
+        let dataTime=document.querySelector(".date_time_day");
+        let wethFor=document.querySelector(".weth_forcast");
+        let wethIcon=document.querySelector(".weth_icon");
+        let wethTemp=document.querySelector(".weth_temp");
+        let MinTem=document.querySelector(".weth_min");
+        let MaxTem=document.querySelector(".weth_max");
+
+        let feelsLike=document.querySelector(".feels_like");
+        let humidityLike=document.querySelector(".humidity_like");
+        let windLike=document.querySelector(".wind_like");
+        let pressureLike=document.querySelector(".pressure_like");
+
+
+        function getcountryname(name)
+        {
+             return new Intl.DisplayNames([name], { type: 'region' }).of(name);
+        }
+        function getdate(dt)
+        {
+            let date=new Date(dt*1000);
+            // return  new Intl.DateTimeFormat('en-US').format(date);  12/20/2020
+        // return  new Intl.DateTimeFormat(['ban', 'id']).format(date) 20/12/2020
+            const option={
+                month:"long",
+                weekday: "long",
+                year: "numeric",
+                hour:"numeric",
+                minute:"numeric",
+                day:"numeric"
+            }
+             return new Intl.DateTimeFormat("en-US",option).format(date);
+        } 
+        function kelvinToCelsius(kelvin) {
+            // return Number((kelvin - 273.15).toFixed(3))
+            return Math.floor((kelvin - 273.15)*1000)/1000;
+        }
+
+     
+        let currcity=document.querySelector(".frm");
+        let cityy="Delhi"
+        GetWeather();
+         
+
+         currcity.addEventListener("submit",(e)=>{
+            e.preventDefault();
+
+            let runcity=document.querySelector(".city_name");
+            console.log(runcity.value);
+            cityy=runcity.value;
+            GetWeather();
+            runcity.value="";
+        })
+        
+
+        async function GetWeather()
+        {    
+             
+    
+            let apiurl=`https://api.openweathermap.org/data/2.5/weather?q=${cityy}
+            &appid=4e5772277d0eae66bf149257bd1963ef`
+              try{
+                 let raw_data= await fetch(apiurl);
+                 let data =await raw_data.json();
+                 console.log(data);
+                   
+                 const {main,name,weather,wind,sys,dt}=data;
+                
+                 cityName.innerHTML=`${name},${getcountryname(sys.country)}`;
+                 dataTime.innerHTML=`${getdate(dt)}`;
+                 wethFor.innerHTML=weather[0].main;
+                 const iconurl=`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`
+                 wethIcon.innerHTML=`<img  src="${iconurl}" alt="Weather icon">`;
+                //  wethIcon.img.style.filter="drop-shadow(1px 1px 10000px rgb(167, 15, 15))"
+                //    wethIcon.innerHTML.style.width="100vh"
+
+
+                 wethTemp.innerHTML=`${kelvinToCelsius(main.temp)}&#176C`;
+                 MinTem.innerHTML=`MIN ${kelvinToCelsius(main.temp_min)}&#176C`;
+                 MaxTem.innerHTML=`MAX ${kelvinToCelsius(main.temp_max)}&#176C`;
+                 
+
+
+                 feelsLike.innerHTML=`${kelvinToCelsius(main.feels_like)}&#176C`;
+                 humidityLike.innerHTML=`${main.humidity}&#37`;
+                 windLike.innerHTML=`${wind.speed} m/s`;
+                 pressureLike.innerHTML=`${main.pressure/10} kPa`;
+                
+                  
+                  
+            
+            }
+            catch(err){
+                console.log(err);
+                console.log('njndjk');
+                
+            }
+        }
+        
+       
+
+</script>
+</body>
+</html>
